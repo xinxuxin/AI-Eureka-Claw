@@ -10,14 +10,15 @@
 
 <p align="center">
   <a href="https://github.com/EurekaClaw/EurekaClaw/stargazers"><img src="https://img.shields.io/github/stars/EurekaClaw/EurekaClaw?style=flat-square&color=yellow" alt="Stars"/></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-007ACC?style=flat-square" alt="MIT License"/></a>
-  <img src="https://img.shields.io/badge/python-3.11%2B-007ACC?style=flat-square" alt="Python 3.11+"/>
+  <!-- <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-007ACC?style=flat-square" alt="Apache 2.0"/></a> -->
+  <img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg?style=flat-square" alt="License: Apache 2.0">
+  <img src="https://img.shields.io/badge/python-3.11%2B-007ACC?style=flat-square&color=yellow" alt="Python 3.11+"/>
   <img src="https://img.shields.io/badge/local--first-private%20by%20default-1F8AD2?style=flat-square" alt="Local-first"/>
 </p>
 
 <p align="center">
   <a href="https://www.eurekaclaw.ai/"><img src="https://img.shields.io/badge/🌐%20Website-eurekaclaw.ai-007ACC?style=flat-square" alt="Website"/></a>
-  <a href="https://eurekaclaw.github.io/"><img src="https://img.shields.io/badge/📚%20Docs-eurekaclaw.github.io-007ACC?style=flat-square" alt="Docs"/></a>
+  <a href="https://eurekaclaw.github.io/"><img src="https://img.shields.io/badge/📚%20Docs-eurekaclaw.github.io-007ACC?style=flat-square&color=green" alt="Docs"/></a>
   <a href="https://www.xiaohongshu.com/user/profile/69bf26c7000000003402ea57"><img src="https://img.shields.io/badge/📕%20RedNote-Follow%20Us-FF2442?style=flat-square" alt="RedNote"/></a>
   <a href="https://discord.gg/SprC5BgmcW"><img src="https://img.shields.io/badge/💬%20Discord-Join%20Us-5865F2?style=flat-square" alt="Discord"/></a>
 </p>
@@ -48,7 +49,7 @@ $ eurekaclaw prove "Find recent papers on sparse attention + prove efficiency bo
 | 💡 | **Idea Generator** | Brainstorm novel hypotheses by synthesizing patterns across thousands of papers |
 | 🔢 | **Theorem Prover** | Generate, verify, and formalize proofs via a 7-stage bottom-up pipeline |
 | 📄 | **Paper Writer** | Draft camera-ready LaTeX papers with theorem environments and citations |
-| 🖥️ | **Runs Locally** | Compatible with any API — data stays private |
+| 🖥️ | **Runs Locally** | Compatible with Every Major Model API — Privacy by Design |
 | 🧠 | **Continual Learning** | Distills proof strategies into skills after every session, improving over time |
 | 🧪 | **Experiment Runner** *(under development)* | Numerically validates theoretical bounds; flags low-confidence lemmas |
 | 🌐 | **Browser UI** | React + TypeScript interface — live agent track, proof sketch, pause/resume, skills manager |
