@@ -2207,6 +2207,23 @@ textarea {
   padding: 3px 8px;
 }
 
+.settings-health-cta {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(15, 106, 184, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.settings-health-cta-copy {
+  margin: 0;
+  font-size: 0.84rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
 /* Settings form */
 .settings-form {
   display: flex;
@@ -2470,6 +2487,69 @@ textarea {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.settings-tool-panel {
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(15, 106, 184, 0.15);
+  background: rgba(243, 249, 255, 0.7);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.settings-tool-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.settings-tool-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(159, 47, 47, 0.6);
+  flex-shrink: 0;
+}
+
+.settings-tool-dot.is-ok {
+  background: var(--ok);
+}
+
+.settings-tool-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.settings-tool-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.settings-tool-btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid rgba(15, 106, 184, 0.2);
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--primary-strong);
+  cursor: pointer;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.settings-tool-btn:hover:not(:disabled) {
+  background: rgba(220, 234, 251, 0.6);
+  transform: translateY(-1px);
+}
+
+.settings-tool-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .settings-oauth-status {
