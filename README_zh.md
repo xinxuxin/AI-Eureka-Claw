@@ -29,11 +29,11 @@
 ```
 $ eurekaclaw prove "Find recent papers on sparse attention + prove efficiency bound"
 
-🦞 正在爬取 arXiv cs.LG (2024–2025)...
-📄 找到 23 篇相关论文，正在总结...
-💡 生成假设：通过拓扑滤波实现 O(n log n)
-✨ 定理 3.1 已起草，LaTeX 已就绪，证明完成。
-🦞 Eureka！论文草稿已保存至 ./results/
+🦞 Crawling arXiv cs.LG (2024–2025)...
+📄 Found 23 relevant papers. Summarizing...
+💡 Hypothesis generated: O(n log n) via topological filtration
+✨ Theorem 3.1 drafted. LaTeX ready. Proof complete.
+🦞 Eureka! Paper draft saved to ./results/
 ```
 
 ---
@@ -219,17 +219,17 @@ make dev
 
 ## 致谢
 
-EurekaClaw 从更广泛的 AI 科学社区中汲取灵感。我们感谢以下项目的作者：
+EurekaClaw站在AI智能体开发和AI赋能的科学研究成果的肩膀上。我们感谢以下项目的作者：
 
-- [MetaClaw](https://github.com/aiming-lab/MetaClaw) — 多智能体研究编排
-- [AutoResearchClaw](https://github.com/aiming-lab/AutoResearchClaw) — 自动化研究编排
-- [EvoScientist](https://github.com/EvoScientist/EvoScientist) — 演化假设生成
-- [AI-Researcher](https://github.com/hkuds/ai-researcher) — 自动化研究流水线
-- [Awesome AI for Science](https://github.com/ai-boost/awesome-ai-for-science) — 精选资源列表
-- [Dr. Claw](https://github.com/OpenLAIR/dr-claw) — 开放研究智能体框架
-- [OpenClaw](https://github.com/openclaw/openclaw) — 开源研究爪
-- [ClawTeam](https://github.com/HKUDS/ClawTeam) — 协作研究智能体
-- [ScienceClaw](https://github.com/beita6969/ScienceClaw) — 面向科学的研究智能体
+- [MetaClaw](https://github.com/aiming-lab/MetaClaw) — multi-agent research orchestration
+- [AutoResearchClaw](https://github.com/aiming-lab/AutoResearchClaw) — automated research orchestration
+- [EvoScientist](https://github.com/EvoScientist/EvoScientist) — evolutionary hypothesis generation
+- [AI-Researcher](https://github.com/hkuds/ai-researcher) — automated research pipeline
+- [Awesome AI for Science](https://github.com/ai-boost/awesome-ai-for-science) — curated resource list
+- [Dr. Claw](https://github.com/OpenLAIR/dr-claw) — open research agent framework
+- [OpenClaw](https://github.com/openclaw/openclaw) — open-source research claw
+- [ClawTeam](https://github.com/HKUDS/ClawTeam) — collaborative research agents
+- [ScienceClaw](https://github.com/beita6969/ScienceClaw) — science-focused research agent
 
 ---
 
