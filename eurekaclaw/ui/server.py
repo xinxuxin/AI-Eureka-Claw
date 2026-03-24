@@ -432,7 +432,33 @@ class UIServerState:
                 asyncio.set_event_loop(loop2)
                 try:
                     async def _rerun() -> Any:
-                        return await session.run(run.input_spec)
+                        main_task = asyncio.current_task()
+                        assert main_task is not None
+                        cp3 = ProofCheckpoint(session_id)
+
+                        async def _poll3() -> None:
+                            while True:
+                                await asyncio.sleep(1)
+                                if cp3.is_pause_requested() and not main_task.cancelled():
+                                    main_task.cancel()
+                                    return
+
+                        poll3 = asyncio.create_task(_poll3())
+                        try:
+                            return await session.run(run.input_spec)
+                        except asyncio.CancelledError:
+                            pipeline = session.bus.get_pipeline() if session.bus else None
+                            stage = "unknown"
+                            if pipeline:
+                                from eurekaclaw.types.tasks import TaskStatus
+                                for t in pipeline.tasks:
+                                    if t.status == TaskStatus.IN_PROGRESS:
+                                        stage = t.name
+                                        break
+                            raise ProofPausedException(session_id, stage)
+                        finally:
+                            poll3.cancel()
+
                     result2 = loop2.run_until_complete(_rerun())
                 finally:
                     loop2.close()
@@ -468,9 +494,28 @@ class UIServerState:
             asyncio.set_event_loop(loop)
             try:
                 with _temporary_auth_env(config):
-                    final_state = loop.run_until_complete(
-                        inner_loop.run(session_id, domain=domain)
-                    )
+                    async def _resume_with_poller() -> Any:
+                        main_task = asyncio.current_task()
+                        assert main_task is not None
+                        cp2 = ProofCheckpoint(session_id)
+
+                        async def _poll() -> None:
+                            while True:
+                                await asyncio.sleep(1)
+                                if cp2.is_pause_requested() and not main_task.cancelled():
+                                    main_task.cancel()
+                                    return
+
+                        poll = asyncio.create_task(_poll())
+                        try:
+                            return await inner_loop.run(session_id, domain=domain)
+                        except asyncio.CancelledError:
+                            from eurekaclaw.agents.theory.checkpoint import ProofPausedException
+                            raise ProofPausedException(session_id, "theory")
+                        finally:
+                            poll.cancel()
+
+                    final_state = loop.run_until_complete(_resume_with_poller())
                     session.bus.put_theory_state(final_state)
             finally:
                 loop.close()
