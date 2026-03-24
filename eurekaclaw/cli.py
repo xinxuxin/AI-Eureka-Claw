@@ -525,7 +525,7 @@ def login(provider: str) -> None:
 
         eurekaclaw login --provider openai-codex
     """
-    from eurekaclaw.auth.oauth import run_pkce_flow
+    from eurekaclaw.auth.oauth import run_device_flow
     from eurekaclaw.auth.providers import get_provider
     from eurekaclaw.auth.token_store import save_tokens
 
@@ -536,7 +536,7 @@ def login(provider: str) -> None:
         sys.exit(1)
 
     try:
-        tokens = run_pkce_flow(prov)
+        tokens = run_device_flow(prov)
     except RuntimeError as exc:
         console.print(f"[red]Login failed: {exc}[/red]")
         sys.exit(1)

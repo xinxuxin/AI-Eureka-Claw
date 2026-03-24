@@ -8,7 +8,8 @@ from dataclasses import dataclass
 @dataclass(frozen=True)
 class OAuthProvider:
     name: str
-    auth_url: str
+    # device_code_url: RFC 8628 device authorization endpoint
+    device_code_url: str
     token_url: str
     client_id: str
     scopes: list[str]
@@ -23,7 +24,7 @@ class OAuthProvider:
 _PROVIDERS: dict[str, OAuthProvider] = {
     "openai-codex": OAuthProvider(
         name="openai-codex",
-        auth_url="https://auth.openai.com/authorize",
+        device_code_url="https://auth.openai.com/oauth/device/code",
         token_url="https://auth.openai.com/oauth/token",
         client_id="app_eurekaclaw",
         scopes=["openid", "profile", "email", "openai.api"],
